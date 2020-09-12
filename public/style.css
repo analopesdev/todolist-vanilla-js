@@ -1,14 +1,16 @@
 :root{
-    --primary-color:#EA0016;
-    --secondary-color:#B90276;
+    --primary-color:#3f9ff8;
+    --secondary-color:#6d76f1;
     --blue-black: #0f222d;
-    --light-color: #fff;
+    --light-color: rgba(255, 255, 255, 0.973);
+    --font-size: 100%;
+    --placeholder-color: #888587;
 }
 
 
 html {
     height: 100%;
-    background-image: linear-gradient( #EA0016, #B90276);
+    background-image: linear-gradient( var(--primary-color), var(--secondary-color));
     background-repeat: no-repeat;
     font-family: 'Roboto', sans-serif;
     color: #0f222d;
@@ -16,7 +18,7 @@ html {
 }
 
 .main {
-    width: 400px;
+    width: 350px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -28,28 +30,49 @@ h1 {
     color: #fff;
 }
 
-form {
-    background-color: #fff;
-    padding: 15px;
+.tasks{
+    background-color: var(--light-color);
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+    
 }
 
-input[type="text"] {
+input[name="title"], textarea[name="description"] {
     width: 310px;
-    height: 30px;
     outline: 0;
     border: none;
-    font-size: 1.5em;
-    background: #fff;
-    color: #2f4f4f;
+    background: none;
+    color: var(--placeholder-color);
+    
 }
+
+input[name="title"] {
+    height: 30px;
+    
+    border-bottom: 2px solid #e3e6e7;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+textarea[name="description"] {
+    font-weight: 400;
+    padding: 10px;
+    font-family:'Roboto', sans-serif;
+    font-size: 0.8rem;
+
+}
+
 
 button {
     font-size: 1.5em;
-    color:  #005691;
-    background-color: #fff;
+    color:  #ffffff;
+    background-color: rgb(138, 212, 169);
     outline: 0;
+    padding: 1%;
     border: none;
     width: 50px;
+    font-weight: bold;
 }
 
 .tasksBoard {
