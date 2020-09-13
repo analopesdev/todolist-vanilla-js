@@ -3,17 +3,23 @@ const data = require("./data.json")
 
 //Show
 exports.getTask = function(req, res){
- const {taskId}  = req.params.id
+ const {id}  = req.params
 
  const foundTask = data.tasks.find(function(task){
-   return task.id == taskId
+   return task.id == id
  })
 
  if(!foundTask) return res.send("Task not found")
 
- return res.render("tasks/show.njk", {tasks:foundTask})
+ const task = {
+   ...foundTask,
+   created_at: new Intl.DateTimeFormat("pt-BR").format(foundTask.created_at),
+ }
+
+ return res.render("tasks/show.njk", {task})
 
 }
+
 
 //post
 exports.createTask = function(req, res){
@@ -41,11 +47,24 @@ exports.createTask = function(req, res){
   //verificar
   fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
     if(err) return res.send("Write file error!")
-    
     return res.render("tasks/index.njk")
   })
 
   //  return res.send(req.body)
+}
+
+//edit
+
+exports.editTask = function (req, res){
+  const {id}  = req.params
+
+ const foundTask = data.tasks.find(function(task){
+   return task.id == id
+ })
+
+ if(!foundTask) return res.send("Task not found")
+  
+  return res.render('tasks/edit', {task: foundTask})
 }
 
 
