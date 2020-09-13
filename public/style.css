@@ -1,5 +1,5 @@
 :root{
-    --primary-color:#3f9ff8;
+    --primary-color:#dd1435;
     --secondary-color:#6d76f1;
     --blue-black: #0f222d;
     --light-color: rgba(255, 255, 255, 0.973);
@@ -47,6 +47,10 @@ input[name="title"], textarea[name="description"] {
     
 }
 
+.tasks{
+    margin-bottom: 10px;
+}
+
 input[name="title"] {
     height: 30px;
     
@@ -67,7 +71,7 @@ textarea[name="description"] {
 button {
     font-size: 1.5em;
     color:  #ffffff;
-    background-color: rgb(138, 212, 169);
+    background: none;
     outline: 0;
     padding: 1%;
     border: none;
@@ -122,4 +126,19 @@ a {
     button {
         width: 10%;
     }
+}
+
+
+#add{
+    background: rgb(255, 255, 255);
+    color: rgb(227, 0, 98);
+    font-size:40px;
+    border-radius: 60%;
+    position: fixed;
+    top: 160px;
+    left: 840px;
+}
+
+#pen, #eye{
+ color: rgb(0, 132, 255);;
 }

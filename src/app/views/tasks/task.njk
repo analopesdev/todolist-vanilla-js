@@ -1,0 +1,21 @@
+{% for task in tasks %}
+    <div class="tasks">
+        <input type="checkbox"><label>
+        <input
+            type="text" 
+            value="{{task.title}}" 
+            name="title" 
+        >
+        <textarea 
+            type="text" 
+            name="description" 
+            placeholder="start writing" 
+            >{{task.description}}
+        </textarea>
+        
+        <a href="/index/{{task.id}}/edit"><span class="material-icons" id="pen">create</span></a>
+        <label>{{task.created_at}}</label>
+        <br>
+    </div>
+{% endfor %} 
+ 

@@ -1,0 +1,17 @@
+{% include "./header.njk" %}
+<div class="tasks">
+    <input 
+      type="text" 
+      value="{{task.title}}" 
+      name="title" 
+      placeholder="new list title"
+     >
+
+    <input
+    type="text" 
+      name="description" 
+      placeholder="start writing" 
+      value="{{task.description}}"
+    >
+</div>
+<button type="submit">Salvar</button>

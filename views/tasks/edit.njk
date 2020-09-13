@@ -1,9 +1,0 @@
-<form  method="POST" action="/index?_method=PUT">
-<h1>Edit Task</h1>
-{% include "./fields.njk" %}
-</form>
-
-<form action="/index?_method=DELETE" method="post">
-    <input type="hidden" name="id" value="{{task.id}}">
-    <button type="submit">Deletar</button>
-</form>

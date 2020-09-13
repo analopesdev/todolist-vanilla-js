@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+   {% include "./header.njk" %}
+</head>
+
+<body>   
+    <div class="main">
+    <h1>My To-Do List</h1>
+        <form  action="/index" method="POST">
+            {% include "./create.njk" %}
+        </form>
+
+            
+            {% include "./task.njk" %}
+        
+</div>
+</body>
+</html>
