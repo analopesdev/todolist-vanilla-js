@@ -11,15 +11,11 @@
 </head>
 
 <body>
-    <div class="main">
-        <h1>My To-Do List</h1>
-
-        {% include "tasks/create.njk"%}
-        {% include "tasks/show.njk" %}
-        {% block content %}{% endblock %}
-        
-    </div>
-
+         <div class="main">
+            <h1>My To-Do List</h1>
+            {% include "./create.njk" %}
+            {% include "./show.njk" %}
+        </div>
     <script type="./public/javascript" src="app.js"></script>
 </body>
 </html>
