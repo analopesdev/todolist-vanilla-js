@@ -1,20 +1,59 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+    <head>
+        {% include "./head.njk"%}
+    </head>
 
-<head>
-   {% include "./header.njk" %}
-</head>
+    <body>  
+        <div class="main">
+            <h1>My To-Do List</h1>
+            <form  action="/index" method="POST">
+                <div class="tasks">
+                    <input 
+                        class="title" 
+                        type="text" 
+                        name="title" 
+                        placeholder="new list title"
+                    >
 
-<body>   
-    <div class="main">
-    <h1>My To-Do List</h1>
-        <form  action="/index" method="POST">
-            {% include "./create.njk" %}
-        </form>
+                    <textarea  
+                        placeholder="start writing" 
+                        type="text" 
+                        rows="1"  
+                        maxlength="40" 
+                        name="description" 
+                        placeholder="start writing" 
+                        maxlength="100"></textarea>
 
-            
-            {% include "./task.njk" %}
-        
-</div>
-</body>
+                    <button type="submit">
+                        <span class="material-icons" id="add">add_circle</span>
+                    </button>
+                </div>
+            </form>
+
+            {% for task in tasks %}
+                <div class="card" id="{{tasks}}">
+                    <div class="card-content">
+                        <h3 class="title">{{task.title}}</h3>
+                        <p>{{task.description}}</p>
+                    </div>
+                    
+                    <div class="card-material-edit">
+                        <a href="/index/{{task.id}}/edit">
+                            <span class="material-icons" id="pen">create</span>
+                        </a>
+                    </div>
+
+                    <div class="card-date">
+                        <label 
+                            name="date" 
+                            type="text"
+                            >{{task.created_at}}
+                        </label>
+                    </div>
+                    <br>
+                </div>
+            {% endfor %} 
+        </div>
+        </body>
 </html>

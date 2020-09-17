@@ -8,17 +8,7 @@ module.exports ={
       return res.render("tasks/index", {tasks})
      })
   },
-  
-  // //show
-  // getTask(req, res){
-  //   Task.find(req.params.id, function(task){
-  //     if(!task) return res.send("Task Not Found")
-  //     task.created_at = date(task.created_at).format
 
-  //     return res.render("tasks/show.njk", {task})
-  //   })
-  // },
-  
   //post
   createTask(req, res){
     const keys = Object.keys(req.body)
@@ -38,11 +28,11 @@ module.exports ={
   editTask(req, res){
       Task.find(req.params.id, function(task){
         if(!task) res.send("Task Not Found")
-        // task.created_at = date(task.created_at).format
+        task.created_at = date(task.created_at).format
         
         return res.render("tasks/edit", {task})
       })
-    },
+  },
   
   //update
   updateTask(req, res){
@@ -55,7 +45,6 @@ module.exports ={
 
     Task.update(req.body, function() {
         return res.redirect("/index")
-       
     })
   },
   
@@ -63,7 +52,6 @@ module.exports ={
   deleteTask(req, res){
     Task.delete(req.body.id, function(){
       return res.redirect('/index')
-
     })
   },
 }
