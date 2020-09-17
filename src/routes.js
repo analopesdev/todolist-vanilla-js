@@ -1,21 +1,15 @@
 const express = require('express')
 const routes = express.Router()
-const tasks = require('./app/controllers/tasks')
-
-routes.get('/index', tasks.list)
+const tasks = require('./app/controllers/TasksController')
 
 routes.get('/', function (req, res){
     return res.render('tasks/index')
 })
 
-// routes.get('/tasks', function (req, res){
-//     return res.redirect('tasks/index')
-// })
-
-// routes.get('/index/:id', tasks.getTask)
+routes.get('/index', tasks.listTasks)
+routes.get('/index/:id/edit', tasks.getTask);
 routes.post('/index', tasks.createTask)
-routes.put('/index', tasks.updateTask)
-routes.get('/index/:id/edit', tasks.editTask);
+routes.put('/index', tasks.editTask)
 routes.delete('/index', tasks.deleteTask)
 
 module.exports = routes;

@@ -2,14 +2,12 @@ const Task = require('../models/Task')
 const {date} = require('../../lib/utils')
 
 module.exports ={
-  //list
-  list(req, res){
+  listTasks(req, res){
      Task.all(function(tasks){
       return res.render("tasks/index", {tasks})
      })
   },
 
-  //post
   createTask(req, res){
     const keys = Object.keys(req.body)
   
@@ -24,8 +22,7 @@ module.exports ={
     })
   },
   
-  //edit
-  editTask(req, res){
+  getTask(req, res){
       Task.find(req.params.id, function(task){
         if(!task) res.send("Task Not Found")
         task.created_at = date(task.created_at).format
@@ -34,8 +31,7 @@ module.exports ={
       })
   },
   
-  //update
-  updateTask(req, res){
+  editTask(req, res){
     const keys = Object.keys(req.body)
 
     for (let key of keys) {
@@ -48,7 +44,6 @@ module.exports ={
     })
   },
   
-  //delete
   deleteTask(req, res){
     Task.delete(req.body.id, function(){
       return res.redirect('/index')
