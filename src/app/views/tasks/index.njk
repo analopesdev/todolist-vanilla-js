@@ -1,62 +1,62 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        {% include "./head.njk"%}
-    </head>
+  <head>
+    {% include "./head.njk"%}
+  </head>
 
-    <body>  
-        <div class="main">
-            <h1>My To-Do List</h1>
-            <form  action="/index" method="POST">
-                <div class="tasks">
-                    <input 
-                        class="title" 
-                        type="text" 
-                        name="title" 
-                        placeholder="title"
-                    >
+  <body>  
+    <div class="main">
+      <h1>My To-Do List</h1>
+      <form  action="/index" method="POST">
+        <div class="tasks">
+          <input 
+            class="title" 
+            type="text" 
+            name="title" 
+            placeholder="title"
+          >
 
-                    <textarea  
-                        placeholder="description" 
-                        type="text" 
-                        rows="1"  
-                        maxlength="20" 
-                        name="description" 
-                        placeholder="start writing" 
-                        maxlength="100"></textarea>
+          <textarea  
+            placeholder="description" 
+            type="text" 
+            rows="1"  
+            maxlength="20" 
+            name="description" 
+            placeholder="start writing" 
+            maxlength="100"></textarea>
 
-                    <button type="submit">
-                        <span class="material-icons" id="add">add_circle</span>
-                    </button>
-                </div>
-            </form>
-
-            {% for task in tasks %}
-                <div class="cards" id="{{tasks}}">
-                    <div class="card">
-                        <div class="card-content">
-                            <h3 class="title">{{task.title}}</h3>
-                            <p>{{task.description}}</p>
-                        </div>
-                        
-                        <div class="card-material-edit">
-                            <a href="/index/{{task.id}}/edit">
-                                <span class="material-icons" id="pen">create</span>
-                            </a>
-                        </div>
-
-                        <div class="card-date">
-                            <label 
-                                name="date" 
-                                type="text"
-                                >{{task.created_at}}
-                            </label>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-            {% endfor %} 
+            <button type="submit">
+              <span class="material-icons" id="add">add_circle</span>
+            </button>
         </div>
-        <script src="/js/app.js"></script>
-    </body>
+      </form>
+
+      {% for task in tasks %}
+        <div class="cards" id="{{tasks}}">
+          <div class="card">
+            <div class="card-content">
+              <h3 class="title">{{task.title}}</h3>
+              <p>{{task.description}}</p>
+            </div>
+              
+            <div class="card-material-edit">
+              <a href="/index/{{task.id}}/edit">
+                <span class="material-icons" id="pen">create</span>
+              </a>
+            </div>
+
+              <div class="card-date">
+                <label 
+                  name="date" 
+                  type="text"
+                  >{{task.created_at}}
+                </label>
+              </div>
+          </div>
+          <br>
+        </div>
+      {% endfor %} 
+    </div>
+    <script src="/js/app.js"></script>
+  </body>
 </html>

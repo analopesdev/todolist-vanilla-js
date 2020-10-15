@@ -2,7 +2,7 @@
 ### 📑 My To-Do List
 
 <h1 align="center" >
-  <img alt="happy" height="250" title="happy" src="./assets/todolist.gif" />
+  <img alt="happy" height="250" width="450" title="happy" src="./assets/todolist.gif" />
 </h1>
 
 

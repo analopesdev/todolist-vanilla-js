@@ -39,9 +39,9 @@ module.exports = {
     db.query(`
       SELECT *
         FROM tasks
-           WHERE id = $1`, [id], function (err, results) {
-             if (err) throw `Database error! ${err}`
-              callback(results.rows[0])
+          WHERE id = $1`, [id], function (err, results) {
+            if (err) throw `Database error! ${err}`
+            callback(results.rows[0])
         })
   },
 

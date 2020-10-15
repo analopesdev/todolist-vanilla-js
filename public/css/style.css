@@ -1,42 +1,41 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 :root{
-    --primary-color: #16bef1;
-    --color-text-base: #0f222d;
-    --before-color: #adadad;
-    --light-color: rgb(240, 235, 235);
-    --white-color: #fff;
-    --font-size: 100%;
+  --primary-color: #16bef1;
+  --color-text-base: #0f222d;
+  --before-color: #adadad;
+  --light-color: rgb(240, 235, 235);
+  --white-color: #fff;
+  --font-size: 100%;
 }
 
 /* GLOBAL */
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html, body {
-    height: 100vh;
-    font-family: 'Nunito', sans-serif;
+  height: 100vh;
+  font-family: 'Nunito', sans-serif;
 }
 
 body{
-    background-color:var(--primary-color);
+  background-color:var(--primary-color);
 }
 
 body, 
 input, 
 button, 
 textarea{
-    font: 500 1.6rem 'Nunito', sans-serif;
-    color: var(--color-text-base);
+  font: 500 1.6rem 'Nunito', sans-serif;
+  color: var(--color-text-base);
 }
 
 
 /* MAIN */
 .main {
-   
     width: 350px;
     display: flex;
     justify-content: center;
@@ -47,7 +46,6 @@ textarea{
     align-items: center;
     position: relative;
 }
-
 
 .main h1{
     position: relative;
@@ -60,7 +58,7 @@ textarea{
     background-color: var(--white-color);
     margin-bottom: 50px;
 }
- 
+
 
 .main .tasks{
     background-color: var(--white-color);
@@ -87,132 +85,112 @@ textarea{
 }
 
 .tasks textarea[type="text"]{
-    font-weight: 400;
-    padding: 10px 0px;
-    font-size: 1.5rem;
-    resize: none;
-    overflow-y: hidden;
-    
+  font-weight: 400;
+  padding: 10px 0px;
+  font-size: 1.5rem;
+  resize: none;
+  overflow-y: hidden; 
 }
 
 button #add{
-    position: absolute;
-
-    color: rgb(187, 33, 179);
-    font-size: 40px;
-    background: none;
-    padding: 10px;
-    right: 0;
-    bottom: 0;
-  
-    display: flex;
-    flex-direction: column;
-    text-align: right;
-
+  position: absolute;
+  color: rgb(187, 33, 179);
+  font-size: 40px;
+  background: none;
+  padding: 10px;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
 }
-
-
 
 /* CARD */
 .cards {
-display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .card{
-width: 345px;
-    height: 140px;
-    margin-bottom: 20px;
-    background: #e5eff1e7;
-    border-radius: 5px;
-    padding-left: 15px;
-    position: relative;
-    box-shadow: 5px 5px 0 #fff, 10px 10px 0 rgba(0,0,0,0.2); 
+  width: 345px;
+  height: 140px;
+  margin-bottom: 20px;
+  background: #e5eff1e7;
+  border-radius: 5px;
+  padding-left: 15px;
+  position: relative;
+  box-shadow: 5px 5px 0 #fff, 10px 10px 0 rgba(0,0,0,0.2); 
 }
- 
- .btn-delete {
-     background-color: rgb(211, 37, 95);
-     bottom: 0;
-     right: 0;
+
+.btn-delete {
+  background-color: rgb(211, 37, 95);
+  bottom: 0;
+  right: 0;
 }
 
 .btn-save, .btn-delete{
-    color: white;
-    position:absolute;
-    border-radius: 10px;
-     margin:10px;
-     border: none;
-     padding: 10px;
+  color: white;
+  position:absolute;
+  border-radius: 10px;
+  margin:10px;
+  border: none;
+  padding: 10px;
 }
-
 .btn-save{
-     background-color: rgb(37, 211, 159);;
-     bottom: 0;
-     left: 180px;
+  background-color: rgb(37, 211, 159);;
+  bottom: 0;
+  left: 180px;
 }
 .card-content h3{
-    font-weight: 600;
-    font-size: 2.5rem;
+  font-weight: 600;
+  font-size: 2.5rem;
 }
 
-.card-content p{
-    font-weight: 400;
-    font-size: 1.7rem;
-}
 
 a #pen{
-    font-size:30px;
-    top: 30px;
-    position: absolute;
-    box-sizing: border-box;
-    right: 20px;
-    top: 100px;
-    color: #7c31dd;
+  font-size:30px;
+  top: 30px;
+  position: absolute;
+  box-sizing: border-box;
+  right: 20px;
+  top: 100px;
+  color: #7c31dd;
 }
 
-.card-date  label{
-    color: var(--before-color);
-}
 
 /* EDIT MAIN */
 input[name="description"]{
-    border: none;
-    padding-top: 5px;
-    display: block;
-    outline: none;
+  padding-top: 10px;
+  border: none;
+  padding-top: 5px;
+  display: block;
+  outline: none;
 }
 
 
 @media (max-width: 500px) {
-    .main {
-        margin: auto;
-        width: 100%;
-    }
-    input[type="text"] {
-        width: 80%;
-    }
-    button {
-        width: 10%;
-    }
+  .main {
+    margin: auto;
+    width: 100%;
+  }
+  input[type="text"] {
+    width: 80%;
+  }
+  button {
+    width: 10%;
+  }
 }
 
 
 label[name="date"]{
-    color: rgb(66, 63, 63);
-    font-size: 10px;
-    position:absolute;
-    right: 90px;
-    bottom: 5px;  
+  color: rgb(66, 63, 63);
+  font-size: 10px;
+  position:absolute;
+  right: 90px;
+  bottom: 5px;  
 }
 
-input[type="checkbox"]{
-    box-sizing: border-box;
-    display: flex;
-    justify-content: right;
-    left: 50px;
-    
-}
 
 
 
