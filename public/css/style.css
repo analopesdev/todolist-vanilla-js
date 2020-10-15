@@ -1,13 +1,12 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 :root{
-    --primary-color: #EA0016;
+    --primary-color: #16bef1;
     --color-text-base: #0f222d;
     --before-color: #adadad;
     --light-color: rgb(240, 235, 235);
     --white-color: #fff;
     --font-size: 100%;
-
 }
 
 /* GLOBAL */
@@ -37,15 +36,21 @@ textarea{
 
 /* MAIN */
 .main {
+   
     width: 350px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 
 .main h1{
+    position: relative;
     font-weight: bold;
     color: var(--primary-color);
     text-align: center;
@@ -55,14 +60,16 @@ textarea{
     background-color: var(--white-color);
     margin-bottom: 50px;
 }
-
+ 
 
 .main .tasks{
     background-color: var(--white-color);
-    border-radius: 2px;
+    border-radius: 10px;
     padding: 15px 10px 0px 10px;
     text-align: center; 
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    height: 150px;
 }
 
 .tasks input[name="title"], textarea[name="description"] {
@@ -89,33 +96,61 @@ textarea{
 }
 
 button #add{
-    color: rgb(33, 164, 187);
+    position: absolute;
+
+    color: rgb(187, 33, 179);
     font-size: 40px;
     background: none;
-    padding: none;
+    padding: 10px;
+    right: 0;
+    bottom: 0;
+  
+    display: flex;
+    flex-direction: column;
+    text-align: right;
 
 }
 
-button{
-    border: none;
-    background: none;
-}
+
 
 /* CARD */
-.card {
-    width: 345px;
+.cards {
+display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card{
+width: 345px;
     height: 140px;
     margin-bottom: 20px;
-    background: #fbfbfbe7;
+    background: #e5eff1e7;
     border-radius: 5px;
     padding-left: 15px;
     position: relative;
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-template-rows: 14vh 70vh 10vh;
     box-shadow: 5px 5px 0 #fff, 10px 10px 0 rgba(0,0,0,0.2); 
 }
+ 
+ .btn-delete {
+     background-color: rgb(211, 37, 95);
+     bottom: 0;
+     right: 0;
+}
 
+.btn-save, .btn-delete{
+    color: white;
+    position:absolute;
+    border-radius: 10px;
+     margin:10px;
+     border: none;
+     padding: 10px;
+}
+
+.btn-save{
+     background-color: rgb(37, 211, 159);;
+     bottom: 0;
+     left: 180px;
+}
 .card-content h3{
     font-weight: 600;
     font-size: 2.5rem;
@@ -133,6 +168,7 @@ a #pen{
     box-sizing: border-box;
     right: 20px;
     top: 100px;
+    color: #7c31dd;
 }
 
 .card-date  label{
@@ -140,42 +176,13 @@ a #pen{
 }
 
 /* EDIT MAIN */
-
 input[name="description"]{
     border: none;
-    padding-left: 10px;
+    padding-top: 5px;
     display: block;
+    outline: none;
 }
 
-.btn-save, .btn-delete{
-    display: grid;
-    grid-template-rows: 2vh;
-    box-sizing: border-box;
-    color: white;
-    font-weight: bold;
-    padding: 15px 30px;
-    border: none;
-    /* border-radius: 4px; */
-    width: 180px;
-    width: 100%;
-    
-}
-
-
-
-.btn-save{
-    margin-top: 40px;
-    right: 230px;
-    background-color:rgb(8, 212, 117);
-    color: white;
-    font-weight: bold;
-    
-    
-}
-
-.btn-delete{
-    background-color: rgb(204, 59, 59);
-}
 
 @media (max-width: 500px) {
     .main {
@@ -195,8 +202,8 @@ label[name="date"]{
     color: rgb(66, 63, 63);
     font-size: 10px;
     position:absolute;
-    display: flex;
-    
+    right: 90px;
+    bottom: 5px;  
 }
 
 input[type="checkbox"]{

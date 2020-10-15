@@ -5,22 +5,23 @@
     </head>
 
     <div class="main">
+        <div class="card-edit">
         <form  method="POST" action="/index?_method=PUT">
             <h1>Edit task</h1>
             <div class="tasks">
                 <div>
                     <input 
-                        type="text" 
-                        value="{{task.title}}" 
-                        name="title" 
+                      type="text" 
+                      value="{{task.title}}" 
+                      name="title" 
                     >
                 </div>
 
                 <div>
                     <input
-                        type="text" 
-                        name="description" 
-                        value="{{task.description}}"
+                     type="text" 
+                     name="description" 
+                     value="{{task.description}}"
                     >
                 <div>
 
@@ -44,6 +45,7 @@
             >
             <button type="submit" class="btn-delete">Delete</button>
          </form>
+        </div>
     </div>
   <body>
 <html>

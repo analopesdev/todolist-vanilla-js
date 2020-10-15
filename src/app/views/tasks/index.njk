@@ -32,24 +32,26 @@
             </form>
 
             {% for task in tasks %}
-                <div class="card" id="{{tasks}}">
-                    <div class="card-content">
-                        <h3 class="title">{{task.title}}</h3>
-                        <p>{{task.description}}</p>
-                    </div>
-                    
-                    <div class="card-material-edit">
-                        <a href="/index/{{task.id}}/edit">
-                            <span class="material-icons" id="pen">create</span>
-                        </a>
-                    </div>
+                <div class="cards" id="{{tasks}}">
+                    <div class="card">
+                        <div class="card-content">
+                            <h3 class="title">{{task.title}}</h3>
+                            <p>{{task.description}}</p>
+                        </div>
+                        
+                        <div class="card-material-edit">
+                            <a href="/index/{{task.id}}/edit">
+                                <span class="material-icons" id="pen">create</span>
+                            </a>
+                        </div>
 
-                    <div class="card-date">
-                        <label 
-                            name="date" 
-                            type="text"
-                            >{{task.created_at}}
-                        </label>
+                        <div class="card-date">
+                            <label 
+                                name="date" 
+                                type="text"
+                                >{{task.created_at}}
+                            </label>
+                        </div>
                     </div>
                     <br>
                 </div>
